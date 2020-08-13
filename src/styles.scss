@@ -1,1 +1,76 @@
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@import "~@angular/material/theming";
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat-core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+
+/* http://mcg.mbitson.com/#!?mcgpalette0=%23dd7204&themename=custom-orange */
+$custom-orange: (
+  50: #fbeee1,
+  100: #f5d5b4,
+  200: #eeb982,
+  300: #e79c4f,
+  400: #e2872a,
+  500: #dd7204,
+  600: #d96a03,
+  700: #d45f03,
+  800: #cf5502,
+  900: #c74201,
+  A100: #fff3ef,
+  A200: #ffcdbc,
+  A400: #ffa889,
+  A700: #ff956f,
+  contrast: (
+    50: #000000,
+    100: #000000,
+    200: #000000,
+    300: #000000,
+    400: #000000,
+    500: #000000,
+    600: #ffffff,
+    700: #ffffff,
+    800: #ffffff,
+    900: #ffffff,
+    A100: #000000,
+    A200: #000000,
+    A400: #000000,
+    A700: #000000,
+  ),
+);
+
+$atlas-firestarter-primary: mat-palette($custom-orange);
+$atlas-firestarter-accent: mat-palette($mat-teal, A200, A100, A400);
+
+// The warn palette is optional (defaults to red).
+$atlas-firestarter-warn: mat-palette($mat-red);
+
+// Create the theme object (a Sass map containing all of the palettes).
+$atlas-firestarter-theme: mat-dark-theme(
+  $atlas-firestarter-primary,
+  $atlas-firestarter-accent,
+  $atlas-firestarter-warn
+);
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include angular-material-theme($atlas-firestarter-theme);
+
 /* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}

@@ -1,0 +1,65 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav
+    #drawer
+    class="sidenav"
+    fixedInViewport
+    [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+    [mode]="(isHandset$ | async) ? 'over' : 'side'"
+    [opened]="false"
+  >
+    <mat-toolbar>Menu</mat-toolbar>
+    <mat-nav-list>
+      <a (click)="drawer.toggle()" mat-list-item routerLink="/">🏠 Home</a>
+      <a (click)="drawer.toggle()" mat-list-item routerLink="/kanban"
+        >📚 Kanban Demo</a
+      >
+      <a (click)="drawer.toggle()" mat-list-item routerLink="/customers"
+        >⚡ SSR Demo</a
+      >
+      <a (click)="drawer.toggle()" mat-list-item routerLink="/login"
+        >🔑 Login</a
+      >
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <mat-toolbar>
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        onclick="this.blur()"
+        (click)="drawer.toggle()"
+        *ngIf="isHandset$ | async"
+      >
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+
+      <span>🔥 Atlas Firestarter</span>
+
+      <span class="fill-space"></span>
+
+      <div *ngIf="!(isHandset$ | async)">
+        <a onclick="this.blur()" mat-button routerLink="/kanban"
+          >📚 Kanban Demo</a
+        >
+        <a onclick="this.blur()" mat-button routerLink="/customers"
+          >⚡ SSR Demo</a
+        >
+        <a onclick="this.blur()" mat-button routerLink="/login">🔑 Login</a>
+      </div>
+
+      <button onclick="this.blur()" mat-icon-button [matMenuTriggerFor]="menu">
+        <mat-icon>more_vert</mat-icon>
+      </button>
+
+      <mat-menu #menu="matMenu">
+        <a mat-menu-item routerLink="/about">About Us</a>
+        <a mat-menu-item routerLink="/contact">Contact Us</a>
+      </mat-menu>
+    </mat-toolbar>
+
+    <!-- Add Content Here -->
+    <ng-content></ng-content>
+  </mat-sidenav-content>
+</mat-sidenav-container>
