@@ -18,6 +18,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatSortModule } from '@angular/material/sort';
 import { MatTableModule } from '@angular/material/table';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { RouterModule } from '@angular/router';
 
 import { ShellComponent } from './shell/shell.component';
 
@@ -43,6 +44,7 @@ import { ShellComponent } from './shell/shell.component';
     MatListModule,
     MatBottomSheetModule,
     MatChipsModule,
+    RouterModule,
   ],
   exports: [
     LayoutModule,

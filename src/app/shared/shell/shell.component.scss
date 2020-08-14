@@ -21,6 +21,15 @@
   z-index: 1;
 }
 
+.logo {
+  cursor: pointer;
+  user-select: none;
+
+  &:focus {
+    outline: none;
+  }
+}
+
 .fill-space {
   flex: 1 1 auto;
 }

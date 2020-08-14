@@ -35,21 +35,17 @@
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
 
-      <span>🔥 Atlas Firestarter</span>
+      <span class="logo" routerLink="/">🔥 Atlas Firestarter</span>
 
       <span class="fill-space"></span>
 
       <div *ngIf="!(isHandset$ | async)">
-        <a onclick="this.blur()" mat-button routerLink="/kanban"
-          >📚 Kanban Demo</a
-        >
-        <a onclick="this.blur()" mat-button routerLink="/customers"
-          >⚡ SSR Demo</a
-        >
-        <a onclick="this.blur()" mat-button routerLink="/login">🔑 Login</a>
+        <a mat-button routerLink="/kanban">📚 Kanban Demo</a>
+        <a mat-button routerLink="/customers">⚡ SSR Demo</a>
+        <a mat-button routerLink="/login">🔑 Login</a>
       </div>
 
-      <button onclick="this.blur()" mat-icon-button [matMenuTriggerFor]="menu">
+      <button mat-icon-button [matMenuTriggerFor]="menu">
         <mat-icon>more_vert</mat-icon>
       </button>
 
