@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "atlas-prods": {
+      "hosting": {
+        "atlas-firestarter": [
+          "atlas-prods"
+        ]
+      }
+    }
+  }
+}

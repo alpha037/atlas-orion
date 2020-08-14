@@ -121,8 +121,13 @@
               "devServerTarget": "atlas-firestarter:serve:production"
             }
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {}
         }
       }
-    }},
+    }
+  },
   "defaultProject": "atlas-firestarter"
 }

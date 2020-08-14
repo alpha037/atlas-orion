@@ -1,6 +1,7 @@
 <mat-sidenav-container class="sidenav-container">
   <mat-sidenav
     #drawer
+    [autoFocus]="false"
     class="sidenav"
     fixedInViewport
     [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
@@ -40,9 +41,9 @@
       <span class="fill-space"></span>
 
       <div *ngIf="!(isHandset$ | async)">
-        <a mat-button routerLink="/kanban">📚 Kanban Demo</a>
-        <a mat-button routerLink="/customers">⚡ SSR Demo</a>
-        <a mat-button routerLink="/login">🔑 Login</a>
+        <button mat-button routerLink="/kanban">📚 Kanban Demo</button>
+        <button mat-button routerLink="/customers">⚡ SSR Demo</button>
+        <button mat-button routerLink="/login">🔑 Login</button>
       </div>
 
       <button mat-icon-button [matMenuTriggerFor]="menu">
@@ -50,8 +51,8 @@
       </button>
 
       <mat-menu #menu="matMenu">
-        <a mat-menu-item routerLink="/about">About Us</a>
-        <a mat-menu-item routerLink="/contact">Contact Us</a>
+        <button mat-menu-item routerLink="/about">About Us</button>
+        <button mat-menu-item routerLink="/contact">Contact Us</button>
       </mat-menu>
     </mat-toolbar>
 

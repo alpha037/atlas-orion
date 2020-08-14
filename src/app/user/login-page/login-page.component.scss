@@ -1,0 +1,39 @@
+.container {
+  padding: 40px 0;
+
+  .login-page,
+  .logged-in {
+    .heading {
+      text-align: center;
+    }
+
+    .logo {
+      width: 26px;
+      height: 26px;
+      margin-top: -3px;
+      margin-right: 5px;
+    }
+
+    .login-button,
+    .logout-button {
+      display: block;
+      margin: auto;
+      margin-top: 2rem;
+    }
+
+    .logged-in-user {
+      font-size: 22px;
+      text-align: center;
+    }
+  }
+
+  .logged-in {
+    margin-top: 5rem;
+  }
+
+  @media screen and (max-width: 768px) {
+    .col-sm-0 {
+      display: none;
+    }
+  }
+}
