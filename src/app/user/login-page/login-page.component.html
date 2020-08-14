@@ -9,9 +9,13 @@
           <img src="/assets/google-logo.png" alt="google-logo" class="logo" />
           Login with Google
         </button>
+
+        <p class="or">OR</p>
+
+        <app-email-login></app-email-login>
       </div>
 
-      <div *ngIf="afAuth.authState | async as user" class="logged-in">
+      <div *ngIf="afAuth.authState | async as user" class="logged-in-page">
         <p class="logged-in-user">
           Logged in as <strong>{{ user.email }}</strong>
         </p>

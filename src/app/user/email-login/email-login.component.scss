@@ -1,0 +1,31 @@
+.card {
+  text-align: center;
+
+  .heading {
+    font-size: 20px;
+    font-weight: bold;
+  }
+
+  .type-btn {
+    margin: 7px 0 30px;
+  }
+
+  .back-icon {
+    margin-top: -2px;
+    margin-left: -2px;
+  }
+
+  .mat-form-field {
+    width: 70%;
+    margin-bottom: 5px;
+  }
+
+  .server-error {
+    color: rgb(228, 33, 72);
+  }
+
+  .btn-forgot-password {
+    display: block;
+    margin: 10px auto 0;
+  }
+}

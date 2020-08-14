@@ -1,10 +1,18 @@
 .container {
-  padding: 40px 0;
+  padding: 30px 0;
 
-  .login-page,
-  .logged-in {
+  .login-button,
+  .logout-button {
+    display: block;
+    margin: auto;
+    margin-top: 2rem;
+  }
+
+  .login-page {
     .heading {
       text-align: center;
+      font-weight: bold;
+      font-size: 30px;
     }
 
     .logo {
@@ -14,21 +22,20 @@
       margin-right: 5px;
     }
 
-    .login-button,
-    .logout-button {
-      display: block;
-      margin: auto;
-      margin-top: 2rem;
+    .or {
+      text-align: center;
+      font-weight: bold;
+      margin: 25px 0;
     }
+  }
+
+  .logged-in-page {
+    margin-top: 5rem;
 
     .logged-in-user {
       font-size: 22px;
       text-align: center;
     }
-  }
-
-  .logged-in {
-    margin-top: 5rem;
   }
 
   @media screen and (max-width: 768px) {
