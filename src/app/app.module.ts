@@ -10,6 +10,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { SharedModule } from './shared/shared.module';
+import { SnackService } from './services/snack.service';
 
 @NgModule({
   declarations: [AppComponent, HomePageComponent],
@@ -22,7 +23,7 @@ import { SharedModule } from './shared/shared.module';
     AngularFirestoreModule,
     AngularFireAuthModule,
   ],
-  providers: [],
+  providers: [SnackService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

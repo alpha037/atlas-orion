@@ -61,7 +61,7 @@
       />
 
       <mat-error *ngIf="password.invalid && password.dirty">
-        Password must be at least 6 characters long.
+        Password must be at least 6 chars long.
       </mat-error>
     </mat-form-field>
     <br />
@@ -98,7 +98,7 @@
       type="submit"
       [disabled]="form.invalid || !passwordDoesMatch || loading"
     >
-      Submit
+      {{ isSignup ? "Sign Up" : "Sign In" }}
     </button>
 
     <button

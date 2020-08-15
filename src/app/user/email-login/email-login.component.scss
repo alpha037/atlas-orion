@@ -20,12 +20,28 @@
     margin-bottom: 5px;
   }
 
+  .mat-error {
+    font-size: 14px;
+    color: #f85959;
+    font-weight: 600;
+  }
+
+  .mat-error:focus {
+    border-color: #f85959;
+  }
+
   .server-error {
-    color: rgb(228, 33, 72);
+    color: #f85959;
   }
 
   .btn-forgot-password {
     display: block;
     margin: 10px auto 0;
+  }
+
+  @media screen and (max-width: 768px) {
+    .mat-error {
+      font-size: 12px;
+    }
   }
 }
