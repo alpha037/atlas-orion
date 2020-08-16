@@ -19,6 +19,8 @@ import { MatSortModule } from '@angular/material/sort';
 import { MatTableModule } from '@angular/material/table';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { RouterModule } from '@angular/router';
+import { DragDropModule } from '@angular/cdk/drag-drop';
+import { MatButtonToggleModule } from '@angular/material/button-toggle';
 
 import { ShellComponent } from './shell/shell.component';
 
@@ -44,6 +46,8 @@ import { ShellComponent } from './shell/shell.component';
     MatListModule,
     MatBottomSheetModule,
     MatChipsModule,
+    DragDropModule,
+    MatButtonToggleModule,
     RouterModule,
   ],
   exports: [
@@ -65,6 +69,8 @@ import { ShellComponent } from './shell/shell.component';
     MatListModule,
     MatBottomSheetModule,
     MatChipsModule,
+    DragDropModule,
+    MatButtonToggleModule,
     ShellComponent,
   ],
 })
