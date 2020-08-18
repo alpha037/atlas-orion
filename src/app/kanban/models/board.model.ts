@@ -1,11 +1,9 @@
-export interface Board {
-  id: string;
-  title: string;
-  priority: number;
-  tasks?: Task[];
-}
+import { Task } from './task.model';
 
-export interface Task {
-  description: string;
-  label: 'purple' | 'blue' | 'green' | 'red' | 'yellow' | 'gray';
+export interface Board {
+  id?: string;
+  title?: string;
+  priority?: number;
+  tasks?: Task[];
+  uid?: string;
 }

@@ -1,11 +1,9 @@
 {
   "hosting": [
     {
-      "target": "atlas-firestarter",
-      "public": "dist/atlas-firestarter",
-      "ignore": [
-        "**/.*"
-      ],
+      "target": "atlas-prods",
+      "public": "dist/atlas-prods",
+      "ignore": ["**/.*"],
       "headers": [
         {
           "source": "*.[0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f].+(css|js)",
