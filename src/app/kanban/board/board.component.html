@@ -8,7 +8,7 @@
     </mat-card-title>
 
     <mat-card-subtitle>
-      {{ board.createdAt | date: "medium" }}
+      {{ board.createdAt | date: "short" }}
     </mat-card-subtitle>
   </mat-card-header>
 
@@ -22,10 +22,20 @@
       class="inner-card"
       cdkDrag
       *ngFor="let task of board.tasks; let i = index"
+      (click)="openTaskDialog(task, i)"
     >
       <mat-card [ngClass]="task.label">
         {{ task.description }}
       </mat-card>
     </div>
+
+    <button
+      class="action-button"
+      onclick="this.blur()"
+      mat-stroked-button
+      (click)="openTaskDialog()"
+    >
+      <mat-icon>add</mat-icon>
+    </button>
   </div>
 </mat-card>

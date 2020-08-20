@@ -23,9 +23,10 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
 
 import { ShellComponent } from './shell/shell.component';
+import { LoaderComponent } from './loader/loader.component';
 
 @NgModule({
-  declarations: [ShellComponent],
+  declarations: [ShellComponent, LoaderComponent],
   imports: [
     CommonModule,
     LayoutModule,
@@ -72,6 +73,7 @@ import { ShellComponent } from './shell/shell.component';
     DragDropModule,
     MatButtonToggleModule,
     ShellComponent,
+    LoaderComponent,
   ],
 })
 export class SharedModule {}

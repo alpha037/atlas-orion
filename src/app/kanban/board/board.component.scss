@@ -9,11 +9,21 @@
     font-size: 24px;
     font-weight: bold;
   }
-}
 
-.inner-card {
-  margin: 5px 0;
-  cursor: pointer;
+  .mat-card-subtitle {
+    margin: 3px 0 5px;
+  }
+  .tasks {
+    .inner-card {
+      margin: 5px 0;
+      cursor: pointer;
+    }
+
+    .action-button {
+      display: block;
+      margin: 9px auto 0;
+    }
+  }
 }
 
 // Clone of the original element created with this class

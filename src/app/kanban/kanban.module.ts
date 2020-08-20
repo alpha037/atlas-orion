@@ -6,9 +6,11 @@ import { SharedModule } from '../shared/shared.module';
 import { FormsModule } from '@angular/forms';
 import { BoardListComponent } from './board-list/board-list.component';
 import { BoardComponent } from './board/board.component';
+import { BoardDialogComponent } from './dialogs/board-dialog.component';
+import { TaskDialogComponent } from './dialogs/task-dialog.component';
 
 @NgModule({
-  declarations: [BoardListComponent, BoardComponent],
+  declarations: [BoardListComponent, BoardComponent, BoardDialogComponent, TaskDialogComponent],
   imports: [CommonModule, KanbanRoutingModule, SharedModule, FormsModule],
 })
 export class KanbanModule {}

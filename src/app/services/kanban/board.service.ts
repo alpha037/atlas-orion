@@ -24,7 +24,6 @@ export class BoardService {
     const user = await this.afAuth.authState.pipe(take(1)).toPromise();
     return this.databaseRef.add({
       ...board,
-      priority: 0,
       tasks: [
         { description: `Hello There, ${user.displayName}`, label: 'yellow' },
       ],

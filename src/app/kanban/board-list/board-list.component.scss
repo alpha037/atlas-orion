@@ -47,3 +47,20 @@
 .cdk-drop-list-dragging .cdk-drag {
   transition: transform 200ms ease;
 }
+
+.board-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 5px dashed lightgray;
+  margin-left: 15px;
+  width: 250px;
+  padding: 32px;
+  height: 250px;
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    border: 5px dashed #e2872a;
+  }
+}
