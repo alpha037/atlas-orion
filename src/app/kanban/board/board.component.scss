@@ -1,0 +1,55 @@
+.outer-card {
+  margin: 10px;
+  min-width: 300px;
+  max-width: 300px;
+  padding: 15px 10px 10px;
+  background: #212121;
+
+  .board-title {
+    font-size: 24px;
+    font-weight: bold;
+  }
+}
+
+.inner-card {
+  margin: 5px 0;
+  cursor: pointer;
+}
+
+// Clone of the original element created with this class
+// when the user starts dragging an element
+.cdk-drag-placeholder {
+  opacity: 0.3;
+}
+
+// When the user starts dragging, the cdk will automatically
+// add these transform classes. By default, those transforms
+// won't be animated so they'll look very quick and unnatural
+.cdk-drag-animating,
+.cdk-drop-list-dragging .cdk-drag {
+  transition: transform 200ms ease;
+}
+
+.blue {
+  background: #71deff;
+  color: black;
+}
+.green {
+  background: #36e9b6;
+  color: black;
+}
+.yellow {
+  background: #ffcf44;
+  color: black;
+}
+.purple {
+  background: #b15cff;
+}
+.red {
+  background: #e74a4a;
+}
+
+.gray {
+  background: gray;
+  text-decoration: line-through;
+}

@@ -6,4 +6,5 @@ export interface Board {
   priority?: number;
   tasks?: Task[];
   uid?: string;
+  createdAt?: number;
 }

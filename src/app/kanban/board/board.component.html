@@ -3,12 +3,12 @@
     <!-- Slot for the drag handle -->
     <ng-content></ng-content>
 
-    <mat-card-title>
+    <mat-card-title class="board-title">
       {{ board.title }}
     </mat-card-title>
 
     <mat-card-subtitle>
-      {{ board.id }}
+      {{ board.createdAt | date: "medium" }}
     </mat-card-subtitle>
   </mat-card-header>
 

@@ -26,9 +26,10 @@ export class BoardService {
       ...board,
       priority: 0,
       tasks: [
-        { description: `Hey There, ${user.displayName}`, label: 'yellow' },
+        { description: `Hello There, ${user.displayName}`, label: 'yellow' },
       ],
       uid: user.uid,
+      createdAt: Date.now(),
     });
   }
 
