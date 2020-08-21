@@ -25,7 +25,10 @@ export class BoardService {
     return this.databaseRef.add({
       ...board,
       tasks: [
-        { description: `Hello There, ${user.displayName}`, label: 'yellow' },
+        {
+          description: `Hello There, ${user.displayName}. This task has been auto-generated for you.`,
+          label: 'yellow',
+        },
       ],
       uid: user.uid,
       createdAt: Date.now(),

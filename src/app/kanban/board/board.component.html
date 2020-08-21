@@ -1,4 +1,4 @@
-<mat-card class="outer-card">
+<mat-card class="outer-card mat-elevation-z12">
   <mat-card-header>
     <!-- Slot for the drag handle -->
     <ng-content></ng-content>
@@ -29,13 +29,13 @@
       </mat-card>
     </div>
 
-    <button
-      class="action-button"
-      onclick="this.blur()"
-      mat-stroked-button
-      (click)="openTaskDialog()"
-    >
-      <mat-icon>add</mat-icon>
-    </button>
+    <div class="action-buttons">
+      <button onclick="this.blur()" mat-button (click)="openTaskDialog()">
+        <mat-icon class="add-icon">add_circle</mat-icon>
+        New
+      </button>
+
+      <app-delete-button (delete)="handleDeleteEvent()"></app-delete-button>
+    </div>
   </div>
 </mat-card>

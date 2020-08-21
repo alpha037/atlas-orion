@@ -1,0 +1,18 @@
+<div class="dialog">
+  <h1 mat-dialog-title>Sorry!</h1>
+  <div mat-dialog-content>
+    <h3>You must be logged in to use this feature.</h3>
+  </div>
+  <div mat-dialog-actions class="action-buttons">
+    <button mat-button mat-dialog-close routerLink="/">Home</button>
+    <button
+      mat-raised-button
+      color="primary"
+      routerLink="/login"
+      mat-dialog-close
+      cdkFocusInitial
+    >
+      Login
+    </button>
+  </div>
+</div>

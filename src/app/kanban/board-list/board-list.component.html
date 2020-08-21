@@ -9,16 +9,18 @@
     <app-board cdkDrag *ngFor="let board of boards" [board]="board">
       <mat-icon cdkDragHandle class="handle">drag_indicator</mat-icon>
     </app-board>
+  </div>
 
-    <div class="board-button">
-      <button
-        mat-raised-button
-        cdkDragDisabled
-        color="primary"
-        (click)="openBoardDialog()"
-      >
-        Create New Board
-      </button>
-    </div>
+  <div class="board-button">
+    <button
+      onclick="this.blur()"
+      mat-raised-button
+      cdkDragDisabled
+      color="primary"
+      (click)="openBoardDialog()"
+    >
+      <mat-icon class="create-icon">create</mat-icon>
+      Create New Board
+    </button>
   </div>
 </ng-template>

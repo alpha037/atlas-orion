@@ -10,7 +10,7 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
         <div mat-dialog-content>
           <p>What do we call this board?</p>
           <mat-form-field appearance="outline">
-            <mat-label>A Short Sassy Name</mat-label>
+            <mat-label>Board Name</mat-label>
             <input
               name="title"
               #title="ngModel"
@@ -18,16 +18,17 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
               matInput
               [(ngModel)]="data.title"
               required
-              minlength="5"
+              minlength="3"
               maxlength="20"
+              autocomplete="off"
             />
           </mat-form-field>
           <mat-error *ngIf="title.touched && title.invalid">
             <div *ngIf="title.errors?.required">
-              Oops! This is a required field!
+              You have to name your board!
             </div>
             <div *ngIf="title.errors?.minlength">
-              Must be at least 5 characters.
+              Must be at least 3 characters.
             </div>
             <div *ngIf="title.errors?.maxlength">
               Cannot be more than 20 characters.
@@ -77,8 +78,20 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
       }
 
       .action-buttons {
-        display: block;
-        margin: 0 auto;
+        display: flex;
+        margin: 6px 0 -7px;
+        justify-content: center;
+      }
+
+      @media screen and (max-width: 768px) {
+        .action-buttons {
+          flex-direction: column;
+          margin-bottom: -5px;
+        }
+
+        .action-buttons button {
+          margin-top: 5px;
+        }
       }
     `,
   ],

@@ -40,6 +40,10 @@
   }
 
   @media screen and (max-width: 768px) {
+    .mat-form-field {
+      margin-bottom: 10px;
+    }
+
     .mat-error {
       font-size: 12px;
     }

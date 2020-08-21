@@ -19,9 +19,14 @@
       cursor: pointer;
     }
 
-    .action-button {
-      display: block;
-      margin: 9px auto 0;
+    .action-buttons {
+      display: flex;
+      margin-top: 9px;
+      justify-content: space-evenly;
+
+      .add-icon {
+        margin-top: -3px;
+      }
     }
   }
 }

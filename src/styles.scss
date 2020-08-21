@@ -77,6 +77,11 @@ body {
   font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
+.container {
+  padding-top: 60px;
+  line-height: normal;
+}
+
 button:focus {
   outline: none;
 }

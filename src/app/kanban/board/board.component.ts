@@ -50,4 +50,8 @@ export class BoardComponent {
       }
     });
   }
+
+  handleDeleteEvent() {
+    this.boardService.removeBoard(this.board.id);
+  }
 }

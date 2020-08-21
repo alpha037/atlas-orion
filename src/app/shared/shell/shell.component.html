@@ -12,19 +12,19 @@
     <mat-nav-list>
       <a (click)="drawer.toggle()" mat-list-item routerLink="/">🏠 Home</a>
       <a (click)="drawer.toggle()" mat-list-item routerLink="/kanban"
-        >📚 Kanban Demo</a
-      >
+        >📚 Kanban
+      </a>
       <a (click)="drawer.toggle()" mat-list-item routerLink="/customers"
-        >⚡ SSR Demo</a
-      >
+        >⚡ SSR
+      </a>
       <a (click)="drawer.toggle()" mat-list-item routerLink="/login"
-        >🔑 Login</a
+        >🔑 Signup or Login</a
       >
     </mat-nav-list>
   </mat-sidenav>
 
   <mat-sidenav-content>
-    <mat-toolbar>
+    <mat-toolbar class="mat-elevation-z8 material-toolbar">
       <button
         type="button"
         aria-label="Toggle sidenav"
@@ -41,12 +41,12 @@
       <span class="fill-space"></span>
 
       <div *ngIf="!(isHandset$ | async)">
-        <button mat-button routerLink="/kanban">📚 Kanban Demo</button>
-        <button mat-button routerLink="/customers">⚡ SSR Demo</button>
-        <button mat-button routerLink="/login">🔑 Login</button>
+        <button mat-button routerLink="/kanban">📚 Kanban</button>
+        <button mat-button routerLink="/customers">⚡ SSR</button>
+        <button mat-button routerLink="/login">🔑 Signup or Login</button>
       </div>
 
-      <button mat-icon-button [matMenuTriggerFor]="menu">
+      <button class="menu-icon" mat-icon-button [matMenuTriggerFor]="menu">
         <mat-icon>more_vert</mat-icon>
       </button>
 

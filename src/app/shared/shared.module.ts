@@ -1,8 +1,10 @@
+import { DragDropModule } from '@angular/cdk/drag-drop';
 import { LayoutModule } from '@angular/cdk/layout';
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { MatBottomSheetModule } from '@angular/material/bottom-sheet';
 import { MatButtonModule } from '@angular/material/button';
+import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { MatCardModule } from '@angular/material/card';
 import { MatChipsModule } from '@angular/material/chips';
 import { MatDialogModule } from '@angular/material/dialog';
@@ -19,14 +21,14 @@ import { MatSortModule } from '@angular/material/sort';
 import { MatTableModule } from '@angular/material/table';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { RouterModule } from '@angular/router';
-import { DragDropModule } from '@angular/cdk/drag-drop';
-import { MatButtonToggleModule } from '@angular/material/button-toggle';
 
-import { ShellComponent } from './shell/shell.component';
+import { DeleteButtonComponent } from './delete-button/delete-button.component';
 import { LoaderComponent } from './loader/loader.component';
+import { ShellComponent } from './shell/shell.component';
+import { AuthErrorComponent } from './auth-error/auth-error.component';
 
 @NgModule({
-  declarations: [ShellComponent, LoaderComponent],
+  declarations: [ShellComponent, LoaderComponent, DeleteButtonComponent, AuthErrorComponent],
   imports: [
     CommonModule,
     LayoutModule,
@@ -74,6 +76,7 @@ import { LoaderComponent } from './loader/loader.component';
     MatButtonToggleModule,
     ShellComponent,
     LoaderComponent,
+    DeleteButtonComponent,
   ],
 })
 export class SharedModule {}
