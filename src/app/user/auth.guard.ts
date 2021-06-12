@@ -5,6 +5,8 @@ import {
   CanActivate,
   RouterStateSnapshot,
 } from '@angular/router';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 import { DialogService } from '../services/shared/dialog.service';
 
@@ -18,19 +20,29 @@ export class AuthGuard implements CanActivate {
     private dialog: DialogService
   ) {}
 
-  async canActivate(
+  canActivate(
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
-  ): Promise<boolean> {
-    const user = await this.afAuth.currentUser;
-    const isLoggedIn = !!user;
+  ): Observable<boolean> {
+    // const user = await this.afAuth.currentUser;
+    // const isLoggedIn = !!user;
 
-    if (!isLoggedIn) {
-      // this.snack.authError();
-      this.dialog.authError();
-      // this.router.navigate(['/']);
-    }
+    // if (!isLoggedIn) {
+    //   // this.snack.authError();
+    //   this.dialog.authError();
+    //   // this.router.navigate(['/']);
+    // }
 
-    return isLoggedIn;
+    // return isLoggedIn;
+
+    return this.afAuth.authState.pipe(
+      map((auth) => {
+        const isLoggedIn = !!auth;
+
+        if (!isLoggedIn) this.dialog.authError();
+
+        return isLoggedIn;
+      })
+    );
   }
 }
