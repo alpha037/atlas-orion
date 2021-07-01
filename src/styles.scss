@@ -48,37 +48,38 @@ $custom-orange: (
   ),
 );
 
-$atlas-firestarter-primary: mat-palette($custom-orange);
-$atlas-firestarter-accent: mat-palette($mat-teal, A200, A100, A400);
+$atlas-orion-primary: mat-palette($custom-orange);
+$atlas-orion-accent: mat-palette($mat-teal, A200, A100, A400);
 
 // The warn palette is optional (defaults to red).
-$atlas-firestarter-warn: mat-palette($mat-red);
+$atlas-orion-warn: mat-palette($mat-red);
 
 // Create the theme object (a Sass map containing all of the palettes).
-$atlas-firestarter-theme: mat-dark-theme(
-  $atlas-firestarter-primary,
-  $atlas-firestarter-accent,
-  $atlas-firestarter-warn
+$atlas-orion-theme: mat-dark-theme(
+  $atlas-orion-primary,
+  $atlas-orion-accent,
+  $atlas-orion-warn
 );
 
 // Include theme styles for core and each component used in your app.
 // Alternatively, you can import and @include the theme mixins for each component
 // that you are using.
-@include angular-material-theme($atlas-firestarter-theme);
+@include angular-material-theme($atlas-orion-theme);
 
 /* You can add global styles to this file, and also import other style files */
 
-html,
-body {
-  height: 100%;
-}
+// html,
+// body {
+//   height: 100%;
+// }
+
 body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
 .container {
-  padding-top: 60px;
+  padding-top: 80px;
   line-height: normal;
 }
 
