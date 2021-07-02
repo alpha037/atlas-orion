@@ -18,7 +18,7 @@
 .material-toolbar {
   position: fixed;
   top: 0;
-  z-index: 9999 !important;
+  z-index: 1 !important;
 }
 
 .logo {
@@ -36,4 +36,19 @@
 
 .menu-icon {
   margin-right: 15px;
+}
+
+.avatar {
+  width: 1.75em;
+  border-radius: 50%;
+  margin: 5px 8px 5px 0;
+}
+
+a {
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: none;
+    color: #ffffff;
+  }
 }

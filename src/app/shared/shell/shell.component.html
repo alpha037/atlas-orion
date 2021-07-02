@@ -12,14 +12,30 @@
     <mat-nav-list>
       <a (click)="drawer.toggle()" mat-list-item routerLink="/">🏠 Home</a>
       <a (click)="drawer.toggle()" mat-list-item routerLink="/kanban"
-        >📚 Kanban
+        >📚 Atlas-Kanban
       </a>
       <a (click)="drawer.toggle()" mat-list-item routerLink="/customers"
-        >⚡ SSR
+        >⚡ Atlas-SSR
       </a>
-      <a (click)="drawer.toggle()" mat-list-item routerLink="/login"
+      <a
+        (click)="drawer.toggle()"
+        mat-list-item
+        routerLink="/login"
+        *ngIf="!(afAuth.authState | async)"
         >🔑 Signup or Login</a
       >
+      <a
+        (click)="drawer.toggle()"
+        mat-list-item
+        routerLink="/login"
+        *ngIf="afAuth.authState | async as user"
+      >
+        <img
+          class="avatar"
+          [src]="user.photoURL || 'assets/default-user.png'"
+        />
+        {{ user.displayName }}
+      </a>
     </mat-nav-list>
   </mat-sidenav>
 
@@ -36,14 +52,27 @@
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
 
-      <span class="logo" routerLink="/">🔥 Atlas Firestarter</span>
+      <span class="logo" routerLink="/">🔥 Atlas Orion</span>
 
       <span class="fill-space"></span>
 
       <div *ngIf="!(isHandset$ | async)">
-        <button mat-button routerLink="/kanban">📚 Kanban</button>
-        <button mat-button routerLink="/customers">⚡ SSR</button>
-        <button mat-button routerLink="/login">🔑 Signup or Login</button>
+        <a mat-button routerLink="/kanban">📚 Atlas-Kanban</a>
+        <a mat-button routerLink="/customers">⚡ Atlas-SSR</a>
+        <a mat-button routerLink="/login" *ngIf="!(afAuth.authState | async)"
+          >🔑 Signup or Login</a
+        >
+        <a
+          mat-button
+          routerLink="/login"
+          *ngIf="afAuth.authState | async as user"
+        >
+          <img
+            class="avatar"
+            [src]="user.photoURL || 'assets/default-user.png'"
+          />
+          {{ user.displayName }}
+        </a>
       </div>
 
       <button class="menu-icon" mat-icon-button [matMenuTriggerFor]="menu">
