@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
 import { map, tap } from 'rxjs/operators';
-import { CustomerDetail } from 'src/app/customers/models/customerDetail.model';
+import { CustomerDetails } from 'src/app/customers/models/customerDetail.model';
 import { CustomerList } from 'src/app/customers/models/customerList.model';
 import { SeoService } from './seo.service';
 
@@ -16,7 +16,7 @@ export class CustomerService {
     return this.db.collection('customers');
   }
 
-  async addCustomer(customer: CustomerDetail): Promise<string> {
+  async addCustomer(customer: CustomerDetails): Promise<string> {
     if (!customer.image) customer.image = 'assets/unknown.png';
 
     const newCustomer = await this.getDatabaseRef().add(customer);
@@ -25,13 +25,14 @@ export class CustomerService {
 
   getCustomerList(): Observable<CustomerList[]> {
     return this.getDatabaseRef()
-      .valueChanges()
+      .valueChanges({ idField: 'id' })
       .pipe(
         map((customers) => {
           let customerList: CustomerList[] = [];
 
           customers.forEach((customer) =>
             customerList.push({
+              id: customer.id,
               name: customer['name'],
               tagline: customer['tagline'],
             })
@@ -42,9 +43,9 @@ export class CustomerService {
       );
   }
 
-  getCustomerDetails(customerId: string): Observable<CustomerDetail> {
+  getCustomerDetails(customerId: string): Observable<CustomerDetails> {
     return this.getDatabaseRef()
-      .doc<CustomerDetail>(customerId)
+      .doc<CustomerDetails>(customerId)
       .valueChanges()
       .pipe(
         tap((customer) =>
