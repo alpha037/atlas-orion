@@ -1,5 +1,8 @@
 .container {
-  padding: 30px 0;
+  padding: 30px 0 0 0;
+  text-align: center;
+  align-items: center;
+  margin-left: -10px;
 
   .login-button,
   .logout-button {
@@ -33,14 +36,29 @@
     margin-top: 5rem;
 
     .logged-in-user {
-      font-size: 22px;
+      font-size: 1.5rem;
       text-align: center;
+    }
+
+    .avatar {
+      margin-bottom: 25px;
+      width: 20em;
+      border-radius: 50%;
     }
   }
 
   @media screen and (max-width: 768px) {
     .col-sm-0 {
       display: none;
+    }
+
+    .logged-in-page {
+      font-size: 0.4rem;
+      word-break: break-all;
+
+      .avatar {
+        width: 5rem;
+      }
     }
   }
 }

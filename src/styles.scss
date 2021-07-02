@@ -68,10 +68,11 @@ $atlas-orion-theme: mat-dark-theme(
 
 /* You can add global styles to this file, and also import other style files */
 
-// html,
-// body {
-//   height: 100%;
-// }
+html,
+body {
+  min-height: 100vh;
+  height: auto;
+}
 
 body {
   margin: 0;
@@ -80,6 +81,8 @@ body {
 
 .container {
   padding-top: 80px;
+  width: 90vw;
+  min-height: 100vh;
   line-height: normal;
 }
 
