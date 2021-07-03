@@ -1,4 +1,4 @@
-export interface CustomerDetail {
+export interface CustomerDetails {
   name: string;
   tagline: string;
   bio?: string;

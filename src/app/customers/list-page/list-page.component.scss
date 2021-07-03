@@ -1,0 +1,63 @@
+:host {
+  text-align: center;
+  padding: 24px;
+}
+
+.heading {
+  font-size: 2rem;
+  font-weight: 900;
+  margin: 1rem auto 2rem;
+}
+
+mat-nav-list {
+  max-width: 600px;
+  background-color: #212121;
+  padding: 2rem;
+  margin: 0 auto;
+
+  .create-bio-btn {
+    margin-bottom: 0.5rem;
+  }
+
+  .icon {
+    margin-top: -2px;
+  }
+
+  .cdk-viewport {
+    height: 45vh;
+  }
+
+  mat-list-item {
+    transition: transform 300ms ease;
+    &:hover {
+      transform: translateY(-4px);
+    }
+    transition: transform 300ms ease;
+
+    user-select: none;
+
+    h3 {
+      margin-top: 0.9rem;
+    }
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .heading {
+    font-size: 1.5rem;
+    margin: 0.4rem auto 0.8rem;
+  }
+
+  mat-nav-list {
+    padding: 1rem;
+
+    .subheader {
+      font-size: 0.9rem;
+      line-height: 1.5;
+    }
+
+    .cdk-viewport {
+      height: 30vh;
+    }
+  }
+}

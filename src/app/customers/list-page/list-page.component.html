@@ -1,1 +1,28 @@
-<p>list-page works!</p>
+<app-loader *ngIf="!customers; else loaded"></app-loader>
+
+<ng-template #loaded>
+  <h1 class="heading">Server-Side Rendered About Pages</h1>
+
+  <mat-nav-list role="list">
+    <h3 class="subheader">
+      This is a list of all customers who generated their about pages with the
+      help of our platform's SSR feature.
+    </h3>
+
+    <button mat-raised-button color="accent" class="create-bio-btn">
+      <mat-icon class="icon">web</mat-icon>
+      Create Your Bio
+    </button>
+
+    <cdk-virtual-scroll-viewport itemSize="20" class="cdk-viewport">
+      <mat-list-item
+        *cdkVirtualFor="let customer of customers"
+        [routerLink]="customer.id"
+        role="listitem"
+      >
+        <mat-icon mat-list-icon>account_box</mat-icon>
+        <h3>{{ customer.name }}</h3>
+      </mat-list-item>
+    </cdk-virtual-scroll-viewport>
+  </mat-nav-list>
+</ng-template>

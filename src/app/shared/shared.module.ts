@@ -1,5 +1,6 @@
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { LayoutModule } from '@angular/cdk/layout';
+import { ScrollingModule } from '@angular/cdk/scrolling';
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { MatBottomSheetModule } from '@angular/material/bottom-sheet';
@@ -22,16 +23,22 @@ import { MatTableModule } from '@angular/material/table';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { RouterModule } from '@angular/router';
 
+import { AuthErrorComponent } from './auth-error/auth-error.component';
 import { DeleteButtonComponent } from './delete-button/delete-button.component';
 import { LoaderComponent } from './loader/loader.component';
 import { ShellComponent } from './shell/shell.component';
-import { AuthErrorComponent } from './auth-error/auth-error.component';
 
 @NgModule({
-  declarations: [ShellComponent, LoaderComponent, DeleteButtonComponent, AuthErrorComponent],
+  declarations: [
+    ShellComponent,
+    LoaderComponent,
+    DeleteButtonComponent,
+    AuthErrorComponent,
+  ],
   imports: [
     CommonModule,
     LayoutModule,
+    ScrollingModule,
     MatToolbarModule,
     MatButtonModule,
     MatCardModule,
@@ -55,6 +62,7 @@ import { AuthErrorComponent } from './auth-error/auth-error.component';
   ],
   exports: [
     LayoutModule,
+    ScrollingModule,
     MatToolbarModule,
     MatButtonModule,
     MatCardModule,
