@@ -1,1 +1,53 @@
-<p>detail-page works!</p>
+<div class="container">
+  <h1 class="heading">Detail Page</h1>
+
+  <mat-card>
+    <h3>
+      This content is server rendered with Angular Universal, NestJS, and Google
+      Cloud Run.
+    </h3>
+
+    <button
+      mat-raised-button
+      color="primary"
+      class="copy-btn"
+      (click)="copyContentToClipboard()"
+      [autofocus]="false"
+    >
+      <mat-icon> content_copy </mat-icon>
+      Copy URL
+    </button>
+    <div class="url">
+      <h3>{{ url }}</h3>
+    </div>
+
+    <a
+      href="https://cards-dev.twitter.com/validator"
+      target="blank"
+      mat-stroked-button
+      color="accent"
+      >Twitter Card Validator</a
+    >
+
+    <button mat-stroked-button routerLink="/customers">BACK</button>
+  </mat-card>
+
+  <mat-card *ngIf="customer; else loading">
+    <mat-card-header>
+      <mat-card-title>{{ customer.name }}</mat-card-title>
+      <mat-card-subtitle>
+        {{ customer.tagline }}
+      </mat-card-subtitle>
+    </mat-card-header>
+    <img mat-card-image [src]="customer.image || 'assets/unknown.png'" />
+    <mat-card-content>
+      <p>
+        {{ customer.bio }}
+      </p>
+    </mat-card-content>
+  </mat-card>
+
+  <ng-template #loading>
+    <app-loader></app-loader>
+  </ng-template>
+</div>

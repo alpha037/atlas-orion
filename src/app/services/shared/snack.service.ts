@@ -40,4 +40,10 @@ export class SnackService {
   creatingCustomer() {
     this.snackBar.open('Atlas-SSR is creating your page..', 'Okay');
   }
+
+  copiedToClipboard() {
+    this.snackBar.open('Copied to Clipboard!', null, {
+      duration: 3000,
+    });
+  }
 }

@@ -1,3 +1,4 @@
+import { ClipboardModule } from '@angular/cdk/clipboard';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { LayoutModule } from '@angular/cdk/layout';
 import { ScrollingModule } from '@angular/cdk/scrolling';
@@ -40,6 +41,7 @@ import { ShellComponent } from './shell/shell.component';
     CommonModule,
     LayoutModule,
     ScrollingModule,
+    ClipboardModule,
     MatToolbarModule,
     MatProgressSpinnerModule,
     MatButtonModule,
@@ -65,6 +67,7 @@ import { ShellComponent } from './shell/shell.component';
   exports: [
     LayoutModule,
     ScrollingModule,
+    ClipboardModule,
     MatToolbarModule,
     MatProgressSpinnerModule,
     MatButtonModule,
