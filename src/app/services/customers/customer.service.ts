@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
-import { map, tap } from 'rxjs/operators';
-import { CustomerDetails } from 'src/app/customers/models/customerDetail.model';
+import { map, take, tap } from 'rxjs/operators';
+import { CustomerDetails } from 'src/app/customers/models/customerDetails.model';
 import { CustomerList } from 'src/app/customers/models/customerList.model';
 import { SeoService } from './seo.service';
 
@@ -27,6 +27,7 @@ export class CustomerService {
     return this.getDatabaseRef()
       .valueChanges({ idField: 'id' })
       .pipe(
+        take(1),
         map((customers) => {
           let customerList: CustomerList[] = [];
 
