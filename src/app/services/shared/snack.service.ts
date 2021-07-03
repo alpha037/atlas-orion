@@ -20,4 +20,24 @@ export class SnackService {
       .pipe(tap((_) => this.router.navigate(['/login'])))
       .subscribe();
   }
+
+  newCustomerAdded(customerId: string) {
+    this.snackBar.open(
+      'Hurray! Your about page has been created!',
+      'Take Me There',
+      {
+        duration: 10000,
+        panelClass: ['notification-success'],
+      }
+    );
+
+    return this.snackBar._openedSnackBarRef
+      .onAction()
+      .pipe(tap((_) => this.router.navigate(['/customers', customerId])))
+      .subscribe();
+  }
+
+  creatingCustomer() {
+    this.snackBar.open('Atlas-SSR is creating your page..', 'Okay');
+  }
 }
