@@ -6,7 +6,7 @@ import {
   RouterStateSnapshot,
 } from '@angular/router';
 import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { map, tap } from 'rxjs/operators';
 
 import { DialogService } from '../services/shared/dialog.service';
 
@@ -14,34 +14,29 @@ import { DialogService } from '../services/shared/dialog.service';
   providedIn: 'root',
 })
 export class AuthGuard implements CanActivate {
-  constructor(
-    private afAuth: AngularFireAuth,
-    // private snack: SnackService,
-    private dialog: DialogService
-  ) {}
+  constructor(private afAuth: AngularFireAuth, private dialog: DialogService) {}
 
   canActivate(
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
   ): Observable<boolean> {
+    /**
+     * * Promise based approach
+     */
     // const user = await this.afAuth.currentUser;
     // const isLoggedIn = !!user;
 
-    // if (!isLoggedIn) {
-    //   // this.snack.authError();
-    //   this.dialog.authError();
-    //   // this.router.navigate(['/']);
-    // }
+    // if (!isLoggedIn) this.dialog.authError();
 
     // return isLoggedIn;
 
-    return this.afAuth.authState.pipe(
-      map((auth) => {
-        const isLoggedIn = !!auth;
-
+    /**
+     * * Observable based approach
+     */
+    return this.afAuth.user.pipe(
+      map((user) => !!user),
+      tap((isLoggedIn) => {
         if (!isLoggedIn) this.dialog.authError();
-
-        return isLoggedIn;
       })
     );
   }
