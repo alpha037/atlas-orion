@@ -40,6 +40,11 @@ mat-nav-list {
       margin-top: 0.9rem;
     }
   }
+
+  mat-progress-spinner {
+    display: block;
+    margin: 15px auto 0;
+  }
 }
 
 @media only screen and (max-width: 768px) {
