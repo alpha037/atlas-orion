@@ -48,7 +48,7 @@ $custom-orange: (
   ),
 );
 
-$atlas-orion-primary: mat-palette($custom-orange);
+$atlas-orion-primary: mat-palette($custom-orange, 400);
 $atlas-orion-accent: mat-palette($mat-teal, A200, A100, A400);
 
 // The warn palette is optional (defaults to red).
@@ -88,4 +88,10 @@ body {
 
 button:focus {
   outline: none;
+}
+
+.notification-success {
+  button {
+    color: #38776f;
+  }
 }
