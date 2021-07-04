@@ -1,5 +1,5 @@
 <div class="container">
-  <h1 class="heading">Detail Page</h1>
+  <h1 class="heading">About Page</h1>
 
   <mat-card>
     <h3>
@@ -42,11 +42,9 @@
         {{ customer.tagline }}
       </mat-card-subtitle>
     </mat-card-header>
-    <img mat-card-image [src]="customer.image || 'assets/unknown.png'" />
-    <mat-card-content>
-      <p>
-        {{ customer.bio }}
-      </p>
+    <img mat-card-image [src]="customer.image" />
+    <mat-card-content *ngIf="customer.bio">
+      <p>{{ customer.bio }}</p>
     </mat-card-content>
   </mat-card>
 
