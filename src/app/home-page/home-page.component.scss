@@ -1,0 +1,63 @@
+.main-wrapper {
+  padding: 20px 0;
+}
+
+.masthead-brand {
+  font-size: 2.5rem;
+}
+
+.heading {
+  font-size: 1.2rem;
+}
+
+a {
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 1rem;
+}
+
+.action-btn {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+
+  button {
+    font-size: 0.9rem;
+    margin: 2rem;
+  }
+}
+
+.inner {
+  padding: 10px 0;
+  margin: -6px auto 10px;
+}
+
+.logo-body {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+}
+
+.cover-heading {
+  margin: 10px 0;
+  font-size: 1.5rem;
+}
+
+h2 {
+  font-size: 30px;
+  margin-top: 15px;
+}
+
+.wiki {
+  margin-top: 2rem;
+}
+
+@media only screen and (max-width: 768px) {
+  .action-btn {
+    flex-direction: column;
+
+    button {
+      margin: 1.2rem;
+    }
+  }
+}
