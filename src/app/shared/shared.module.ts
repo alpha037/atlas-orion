@@ -27,6 +27,7 @@ import { RouterModule } from '@angular/router';
 
 import { AuthErrorComponent } from './auth-error/auth-error.component';
 import { DeleteButtonComponent } from './delete-button/delete-button.component';
+import { FooterComponent } from './footer/footer.component';
 import { LoaderComponent } from './loader/loader.component';
 import { ShellComponent } from './shell/shell.component';
 
@@ -36,6 +37,7 @@ import { ShellComponent } from './shell/shell.component';
     LoaderComponent,
     DeleteButtonComponent,
     AuthErrorComponent,
+    FooterComponent,
   ],
   imports: [
     CommonModule,
@@ -91,6 +93,7 @@ import { ShellComponent } from './shell/shell.component';
     ShellComponent,
     LoaderComponent,
     DeleteButtonComponent,
+    FooterComponent,
   ],
 })
 export class SharedModule {}
