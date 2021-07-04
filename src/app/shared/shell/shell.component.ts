@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Observable } from 'rxjs';
-import { map, shareReplay } from 'rxjs/operators';
+import { map, shareReplay, take } from 'rxjs/operators';
 import { AngularFireAuth } from '@angular/fire/auth';
+import { NavigationEnd, Router } from '@angular/router';
 
 @Component({
   selector: 'app-shell',
@@ -17,8 +18,25 @@ export class ShellComponent {
       shareReplay()
     );
 
+  showFooter: boolean = true;
+
   constructor(
     private breakpointObserver: BreakpointObserver,
-    public afAuth: AngularFireAuth
-  ) {}
+    public afAuth: AngularFireAuth,
+    private router: Router
+  ) {
+    this.router.events.subscribe((event) => {
+      if (event instanceof NavigationEnd) {
+        const URL = event.url;
+
+        this.showFooter = !URL.includes('kanban');
+
+        window.scrollTo({
+          top: 0,
+          left: 0,
+          behavior: 'smooth',
+        });
+      }
+    });
+  }
 }
