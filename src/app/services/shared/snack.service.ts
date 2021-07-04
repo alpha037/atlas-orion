@@ -42,8 +42,8 @@ export class SnackService {
   }
 
   copiedToClipboard() {
-    this.snackBar.open('Copied to Clipboard!', null, {
-      duration: 3000,
+    this.snackBar.open('Copied to Clipboard!', 'Nice', {
+      duration: 4000,
     });
   }
 }

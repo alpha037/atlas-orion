@@ -3,8 +3,8 @@
 
   <mat-card>
     <h3>
-      This content is server rendered with Angular Universal, NestJS, and Google
-      Cloud Run.
+      Your page has been server rendered with Angular Universal, NestJS, and
+      Google Cloud Run.
     </h3>
 
     <button
@@ -12,6 +12,7 @@
       color="primary"
       class="copy-btn"
       (click)="copyContentToClipboard()"
+      onclick="this.blur()"
       [autofocus]="false"
     >
       <mat-icon> content_copy </mat-icon>
@@ -29,7 +30,9 @@
       >Twitter Card Validator</a
     >
 
-    <button mat-stroked-button routerLink="/customers">BACK</button>
+    <button mat-stroked-button (click)="handleBrowserBackEvent()">
+      Go Back
+    </button>
   </mat-card>
 
   <mat-card *ngIf="customer; else loading">
