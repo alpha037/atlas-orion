@@ -52,7 +52,10 @@
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
 
-      <span class="logo" routerLink="/">🔥 Atlas Orion</span>
+      <span class="logo" routerLink="/">
+        <img src="assets/orion.png" alt="orion" />
+        Atlas Orion
+      </span>
 
       <span class="fill-space"></span>
 
@@ -80,8 +83,13 @@
       </button>
 
       <mat-menu #menu="matMenu">
-        <button mat-menu-item routerLink="/about">About Us</button>
-        <button mat-menu-item routerLink="/contact">Contact Us</button>
+        <a
+          mat-menu-item
+          href="https://github.com/alpha037/atlas-orion"
+          target="_blank"
+        >
+          👨‍💻 Github
+        </a>
       </mat-menu>
     </mat-toolbar>
 
