@@ -32,6 +32,8 @@ export class ListPageComponent implements OnInit, OnDestroy {
   openDialog() {
     const dialogRef = this.dialog.open(AboutDialogComponent, {
       width: '500px',
+      maxWidth: '100vw',
+      maxHeight: '100vh',
       data: {},
       autoFocus: false,
       restoreFocus: true,

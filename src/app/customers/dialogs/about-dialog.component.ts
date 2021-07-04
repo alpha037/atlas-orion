@@ -9,6 +9,7 @@ import { SnackService } from 'src/app/services/shared/snack.service';
       <div class="col mx-auto dialog-body">
         <h1 mat-dialog-title class="dialog-title">Create Your About Page</h1>
         <div mat-dialog-content>
+          <!-- Name -->
           <mat-form-field appearance="outline">
             <mat-label>Your Name</mat-label>
             <input
@@ -33,6 +34,7 @@ import { SnackService } from 'src/app/services/shared/snack.service';
             <div *ngIf="name.errors?.maxlength">ONLY Your Name!</div>
           </mat-error>
 
+          <!-- Tagline -->
           <mat-form-field appearance="outline">
             <mat-label>A Short Tagline</mat-label>
             <input
@@ -57,6 +59,7 @@ import { SnackService } from 'src/app/services/shared/snack.service';
             <div *ngIf="tagline.errors?.maxlength">What is that, an essay?</div>
           </mat-error>
 
+          <!-- Bio -->
           <mat-form-field appearance="outline">
             <mat-label>You Bio</mat-label>
             <textarea
@@ -66,7 +69,7 @@ import { SnackService } from 'src/app/services/shared/snack.service';
               matInput
               [(ngModel)]="data.bio"
               minlength="10"
-              maxlength="150"
+              maxlength="500"
               autocomplete="off"
               rows="5"
             ></textarea>
@@ -78,6 +81,7 @@ import { SnackService } from 'src/app/services/shared/snack.service';
             <div *ngIf="bio.errors?.maxlength">What is that, an essay?</div>
           </mat-error>
 
+          <!-- Avatar -->
           <mat-form-field appearance="outline">
             <mat-label>Your Avatar URL</mat-label>
             <input
