@@ -31,11 +31,11 @@ export class ShellComponent {
 
         this.showFooter = !URL.includes('kanban');
 
-        window.scrollTo({
-          top: 0,
-          left: 0,
-          behavior: 'smooth',
-        });
+        // window.scrollTo({
+        //   top: 0,
+        //   left: 0,
+        //   behavior: 'smooth',
+        // });
       }
     });
   }

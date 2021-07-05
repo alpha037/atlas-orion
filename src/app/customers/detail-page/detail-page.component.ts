@@ -39,9 +39,9 @@ export class DetailPageComponent implements OnInit, OnDestroy {
     this.snackService.copiedToClipboard();
   }
 
-  handleBrowserBackEvent(): void {
-    window.history.back();
-  }
+  // handleBrowserBackEvent(): void {
+  //   window.history.back();
+  // }
 
   ngOnDestroy(): void {
     this.subscription.unsubscribe();

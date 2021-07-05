@@ -30,9 +30,8 @@
       >Twitter Card Validator</a
     >
 
-    <button mat-stroked-button (click)="handleBrowserBackEvent()">
-      Go Back
-    </button>
+    <!-- <button mat-stroked-button (click)="handleBrowserBackEvent()">Go Back</button> -->
+    <button mat-stroked-button routerLink="/customers">Go Back</button>
   </mat-card>
 
   <mat-card *ngIf="customer; else loading">
