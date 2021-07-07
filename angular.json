@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "atlas-prods": {
+    "atlas-orion": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/atlas-prods",
+            "outputPath": "dist/atlas-orion/browser",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -61,18 +61,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "atlas-prods:build"
+            "browserTarget": "atlas-orion:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "atlas-prods:build:production"
+              "browserTarget": "atlas-orion:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "atlas-prods:build"
+            "browserTarget": "atlas-orion:build"
           }
         },
         "test": {
@@ -102,20 +102,66 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "atlas-prods:serve"
+            "devServerTarget": "atlas-orion:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "atlas-prods:serve:production"
+              "devServerTarget": "atlas-orion:serve:production"
             }
           }
         },
         "deploy": {
           "builder": "@angular/fire:deploy",
           "options": {}
+        },
+        "server": {
+          "builder": "@angular-devkit/build-angular:server",
+          "options": {
+            "outputPath": "dist/atlas-orion/server",
+            "main": "server.ts",
+            "tsConfig": "tsconfig.server.json",
+            "externalDependencies": ["@firebase/firestore"]
+          },
+          "configurations": {
+            "production": {
+              "outputHashing": "media",
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.prod.ts"
+                }
+              ],
+              "sourceMap": false,
+              "optimization": true
+            }
+          }
+        },
+        "serve-ssr": {
+          "builder": "@nguniversal/builders:ssr-dev-server",
+          "options": {
+            "browserTarget": "atlas-orion:build",
+            "serverTarget": "atlas-orion:server"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "atlas-orion:build:production",
+              "serverTarget": "atlas-orion:server:production"
+            }
+          }
+        },
+        "prerender": {
+          "builder": "@nguniversal/builders:prerender",
+          "options": {
+            "browserTarget": "atlas-orion:build:production",
+            "serverTarget": "atlas-orion:server:production",
+            "routes": ["/"]
+          },
+          "configurations": {
+            "production": {}
+          }
         }
       }
     }
   },
-  "defaultProject": "atlas-prods"
+  "defaultProject": "atlas-orion"
 }

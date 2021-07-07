@@ -15,13 +15,13 @@ import { SnackService } from './services/shared/snack.service';
 @NgModule({
   declarations: [AppComponent, HomePageComponent],
   imports: [
-    BrowserModule,
-    AppRoutingModule,
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     BrowserAnimationsModule,
     SharedModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
     AngularFireAuthModule,
+    AppRoutingModule,
   ],
   providers: [SnackService],
   bootstrap: [AppComponent],

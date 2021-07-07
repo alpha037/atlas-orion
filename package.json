@@ -7,7 +7,11 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "dev:ssr": "ng run atlas-orion:serve-ssr",
+    "serve:ssr": "node dist/atlas-orion/server/main.js",
+    "build:ssr": "ng build --prod && ng run atlas-orion:server:production",
+    "prerender": "ng run atlas-orion:prerender"
   },
   "private": true,
   "dependencies": {
@@ -21,8 +25,11 @@
     "@angular/material": "^9.2.4",
     "@angular/platform-browser": "~9.1.4",
     "@angular/platform-browser-dynamic": "~9.1.4",
+    "@angular/platform-server": "~9.1.4",
     "@angular/router": "~9.1.4",
+    "@nguniversal/express-engine": "^9.1.1",
     "bootstrap": "^4.5.2",
+    "express": "^4.15.2",
     "firebase": "^7.13.1",
     "rxjs": "~6.5.4",
     "tslib": "^1.10.0",
@@ -33,6 +40,8 @@
     "@angular/cli": "~9.1.4",
     "@angular/compiler-cli": "~9.1.4",
     "@angular/language-service": "~9.1.4",
+    "@nguniversal/builders": "^9.1.1",
+    "@types/express": "^4.17.0",
     "@types/node": "^12.11.1",
     "@types/jasmine": "~3.5.0",
     "@types/jasminewd2": "~2.0.3",
