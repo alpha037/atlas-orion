@@ -16,6 +16,9 @@ export class SeoService {
     this.title.setTitle(title);
 
     this.meta.addTags([
+      { name: 'author', content: title },
+      { name: 'description', content: description },
+
       // Open Graph Tags
       {
         name: 'og:url',
