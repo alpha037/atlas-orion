@@ -1,0 +1,5 @@
+/node_modules
+backup.txt
+.firebase
+.firebaserc
+firebase.json
