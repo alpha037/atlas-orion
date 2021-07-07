@@ -1,11 +1,5 @@
 {
-  "targets": {
-    "atlas-prods": {
-      "hosting": {
-        "atlas-prods": [
-          "atlas-prods"
-        ]
-      }
-    }
+  "projects": {
+    "default": "atlas-prods"
   }
 }
