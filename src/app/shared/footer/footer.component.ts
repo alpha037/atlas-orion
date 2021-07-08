@@ -7,7 +7,9 @@ import { Component, OnInit } from '@angular/core';
       <p class="footer-company-name">
         <span>All Rights Reserved. </span>
         <span
-          ><a href="https://atlas.shubhranil.com" target="_blank">Atlas Inc.</a>
+          ><a href="https://atlas.shubhranil.com" target="_blank" rel="noopener"
+            >Atlas Inc.</a
+          >
           &copy; {{ date }}</span
         >
       </p>
