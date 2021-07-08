@@ -11,6 +11,7 @@ import { AppComponent } from './app.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { SharedModule } from './shared/shared.module';
 import { SnackService } from './services/shared/snack.service';
+import { ServiceWorkerModule } from '@angular/service-worker';
 
 @NgModule({
   declarations: [AppComponent, HomePageComponent],
@@ -22,6 +23,10 @@ import { SnackService } from './services/shared/snack.service';
     AngularFirestoreModule,
     AngularFireAuthModule,
     AppRoutingModule,
+    ServiceWorkerModule.register('ngsw-worker.js', {
+      enabled: environment.production,
+      registrationStrategy: 'registerImmediately',
+    }),
   ],
   providers: [SnackService],
   bootstrap: [AppComponent],
