@@ -22,16 +22,18 @@
       <h3>{{ url }}</h3>
     </div>
 
-    <a
+    <!-- <a
       href="https://cards-dev.twitter.com/validator"
       target="blank"
       mat-stroked-button
       color="accent"
       >Twitter Card Validator</a
-    >
+    > -->
 
     <!-- <button mat-stroked-button (click)="handleBrowserBackEvent()">Go Back</button> -->
-    <button mat-stroked-button routerLink="/customers">Go Back</button>
+    <button mat-fab routerLink="/customers">
+      <mat-icon>arrow_back</mat-icon>
+    </button>
   </mat-card>
 
   <mat-card *ngIf="customer; else loading">
