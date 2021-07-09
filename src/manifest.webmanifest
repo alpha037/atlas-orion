@@ -1,7 +1,7 @@
 {
-  "name": "atlas-orion",
-  "short_name": "atlas-orion",
-  "theme_color": "#1976d2",
+  "name": "Atlas Orion",
+  "short_name": "Atlas Orion",
+  "theme_color": "#212121",
   "background_color": "#fafafa",
   "display": "standalone",
   "scope": "./",
