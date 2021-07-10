@@ -7,6 +7,7 @@ import { ListPageComponent } from './list-page/list-page.component';
 const routes: Routes = [
   { path: '', component: ListPageComponent },
   { path: ':id', component: DetailPageComponent },
+  { path: '**', redirectTo: '' },
 ];
 
 @NgModule({

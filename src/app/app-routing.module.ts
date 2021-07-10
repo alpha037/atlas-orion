@@ -21,14 +21,15 @@ const routes: Routes = [
     loadChildren: () =>
       import('./customers/customers.module').then((m) => m.CustomersModule),
   },
+  { path: '**', redirectTo: '' },
 ];
 
 @NgModule({
   imports: [
     RouterModule.forRoot(routes, {
-    scrollPositionRestoration: 'top',
-    initialNavigation: 'enabled'
-}),
+      scrollPositionRestoration: 'top',
+      initialNavigation: 'enabled',
+    }),
   ],
   exports: [RouterModule],
 })

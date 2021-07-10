@@ -28,10 +28,12 @@ export class DetailPageComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
-    this.url = `https://orion.shubhranil.com/customers/${this.customerId}`;
     this.subscription = this.customerService
       .getCustomerDetails(this.customerId)
-      .subscribe((customer) => (this.customer = customer));
+      .subscribe((customer) => {
+        this.customer = customer;
+        this.url = `https://orion.shubhranil.com/customers/${this.customerId}`;
+      });
   }
 
   copyContentToClipboard(): void {
