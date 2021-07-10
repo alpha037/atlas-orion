@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
+import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { map, take, tap } from 'rxjs/operators';
 import { CustomerDetails } from 'src/app/customers/models/customerDetails.model';
@@ -10,7 +11,11 @@ import { SeoService } from './seo.service';
   providedIn: 'root',
 })
 export class CustomerService {
-  constructor(private db: AngularFirestore, private seoService: SeoService) {}
+  constructor(
+    private db: AngularFirestore,
+    private seoService: SeoService,
+    private router: Router
+  ) {}
 
   getDatabaseRef() {
     return this.db.collection('customers');
@@ -49,13 +54,15 @@ export class CustomerService {
       .doc<CustomerDetails>(customerId)
       .valueChanges()
       .pipe(
-        tap((customer) =>
+        tap((customer) => {
+          if (!customer) return this.router.navigate(['/customers']);
+
           this.seoService.generateTags({
             title: customer.name,
             description: customer.bio,
             image: customer.image,
-          })
-        )
+          });
+        })
       );
   }
 }
