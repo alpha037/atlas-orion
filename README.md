@@ -9,7 +9,7 @@
 <h1 align="center"><a href="https://orion.shubhranil.com">Atlas Orion</a></h1>
 <p align="center">
     <strong>
-      A two-in-one platform which showcases two major features. One is <a href="#atlas-kanban">Atlas-Kanban</a> which keeps track of all your tasks separated by boards. The other is <a href="#atlas-ssr">Atlas-SSR</a> which generates a server-side rendered about page for you.
+      A two-in-one platform which showcases two major features. One is <a href="https://orion.shubhranil.com/kanban" target="_blank">Atlas-Kanban</a> which keeps track of all your tasks separated by boards. The other is <a href="https://orion.shubhranil.com/customers" target="_blank">Atlas-SSR</a> which generates a server-side rendered about page for you.
     </strong>
    <br /><br />
    <a href="https://github.com/alpha037/atlas-orion#readme"><strong>Explore the docs »</strong></a>
