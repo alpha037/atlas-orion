@@ -120,7 +120,7 @@ There are mainly two major features in this application. In a nutshell, **Atlas-
 
 # Contributing
 
-Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are **greatly appreciated**. For more details, check out the [contributing guidelines](CONTRIBUTING.md).
 
 1. Fork the Project.
 2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`).
